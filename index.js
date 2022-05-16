@@ -31,6 +31,10 @@ const underscore = require('underscore');
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Server on!');
+});
+
 app.post('/api/send', (req, res) => {
   const numbers  = req.body;
   const enviados = [];

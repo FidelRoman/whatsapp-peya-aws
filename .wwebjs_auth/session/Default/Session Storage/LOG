@@ -1,3 +1,2 @@
-2022/05/14-01:03:43.161 7703 Reusing MANIFEST /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/Session Storage/MANIFEST-000001
-2022/05/14-01:03:43.162 7703 Recovering log #3
-2022/05/14-01:03:43.162 7703 Reusing old log /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/Session Storage/000003.log 
+2022/05/15-22:06:16.587 b003 Creating DB /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/Session Storage since it was missing.
+2022/05/15-22:06:16.641 b003 Reusing MANIFEST /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/Session Storage/MANIFEST-000001
