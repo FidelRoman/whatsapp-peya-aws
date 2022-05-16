@@ -1,0 +1,6 @@
+2022/05/14-01:01:19.021 10e07 Reusing MANIFEST /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/05/14-01:01:19.021 10e07 Recovering log #3
+2022/05/14-01:01:19.025 10e07 Reusing old log /Users/fidel/Documents/Development/whatsapp-peya-aws/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000003.log 
+2022/05/14-01:01:41.691 14d03 Level-0 table #5: started
+2022/05/14-01:01:41.745 14d03 Level-0 table #5: 1157796 bytes OK
+2022/05/14-01:01:41.780 14d03 Delete type=0 #3
