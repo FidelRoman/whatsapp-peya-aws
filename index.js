@@ -45,7 +45,7 @@ app.post('/api/send', (req, res) => {
     client.sendMessage(chatId, "Mensaje");
     enviados.push({
       "Numero": number.number ,
-      "Respuesta": "Enviado"
+      "Respuesta": "Hola, tu local está cerrado, revisa tus equipos https://youtu.be/zBq9zzQNoII"
     })
   });
   
