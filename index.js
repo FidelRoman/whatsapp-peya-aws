@@ -42,10 +42,10 @@ app.post('/api/send', (req, res) => {
     
     // Enviar Whatsapp
     const chatId = number.number + "@c.us";
-    client.sendMessage(chatId, "Mensaje");
+    client.sendMessage(chatId, "Hola, tu local está cerrado, revisa tus equipos https://youtu.be/zBq9zzQNoII");
     enviados.push({
       "Numero": number.number ,
-      "Respuesta": "Hola, tu local está cerrado, revisa tus equipos https://youtu.be/zBq9zzQNoII"
+      "Respuesta": "Enviado"
     })
   });
   
