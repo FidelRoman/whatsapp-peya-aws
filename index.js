@@ -42,7 +42,7 @@ app.post('/api/send', (req, res) => {
     
     // Enviar Whatsapp
     const chatId = number.number + "@c.us";
-    client.sendMessage(chatId, "SendMessage");
+    client.sendMessage(chatId, "Mensaje");
     enviados.push({
       "Numero": number.number ,
       "Respuesta": "Enviado"
