@@ -1,6 +1,5 @@
 const fs = require('fs');
 const qrcode = require('qrcode-terminal');
-
 // * Inicia la sesión de whatsapp
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
@@ -23,7 +22,6 @@ client.on('ready', () => {
   console.log('El cliente esta listo');
 });
 
-
 // * Crea el API Rest
 const express = require('express');
 const app = express();
@@ -37,6 +35,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/send', (req, res) => {
+
+  //client.resetState()
+
   const body  = req.body;
   const enviados = [];
   underscore.each(body, (envio,i) => {
