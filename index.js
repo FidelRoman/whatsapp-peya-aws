@@ -3,9 +3,11 @@ const qrcode = require('qrcode-terminal');
 // * Inicia la sesión de whatsapp
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
+const puppeteer = require('puppeteer'); 
+
 const client = new Client({
     authStrategy: new LocalAuth()
-});
+}, puppeteer);
 
 client.initialize();
 
