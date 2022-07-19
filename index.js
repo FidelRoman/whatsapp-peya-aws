@@ -38,6 +38,15 @@ app.get('/', (req, res) => {
 app.post('/api/send', (req, res) => {
   const numbers  = req.body;
   const enviados = [];
+
+  client.pupPage.click("#pane-side");
+
+  async function init() {
+    console.log(1);
+    await sleep(5000);
+    console.log(2);
+  }
+
   underscore.each(numbers, (number,i) => {
     
     // Enviar Whatsapp
