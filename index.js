@@ -1,6 +1,7 @@
 const fs = require('fs');
 const qrcode = require('qrcode-terminal');
-// * Inicia la sesión de whatsapp
+
+
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
 const client = new Client({
@@ -22,7 +23,7 @@ client.on('ready', () => {
   console.log('El cliente esta listo');
 });
 
-// * Crea el API Rest
+
 const express = require('express');
 const app = express();
 
@@ -31,26 +32,33 @@ const underscore = require('underscore');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('<h1>Server on!</h1>');
+  res.send('Server on!');
 });
 
 app.post('/api/send', (req, res) => {
-
-  //client.resetState()
-
-  const body  = req.body;
+  const numbers  = req.body;
   const enviados = [];
-  underscore.each(body, (envio,i) => {
+
+  client.pupPage.click("#pane-side");
+
+  async function init() {
+    console.log(1);
+    await sleep(5000);
+    console.log(2);
+  }
+
+  underscore.each(numbers, (number,i) => {
+    
     // Enviar Whatsapp
-    const chatId = envio.number + "@c.us";
-    const message = envio.message;
+    const chatId = number.number + "@c.us";
+    const message = number.message;
     client.sendMessage(chatId, message);
     enviados.push({
-      "Numero": envio.number,
+      "Numero": number.number ,
       "Respuesta": "Enviado"
     })
   });
-
+  
   res.send(enviados)
 });
 
