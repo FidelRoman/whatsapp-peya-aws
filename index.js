@@ -40,12 +40,7 @@ app.post('/api/send', (req, res) => {
 
   const body  = req.body;
   const enviados = [];
-<<<<<<< HEAD
-  underscore.each(numbers, (number,i) => {
-    
-=======
   underscore.each(body, (envio,i) => {
->>>>>>> parent of d78974a (Revert "Merge branch 'main' of https://github.com/FidelRoman/whatsapp-peya-aws")
     // Enviar Whatsapp
     const chatId = envio.number + "@c.us";
     const message = envio.message;
