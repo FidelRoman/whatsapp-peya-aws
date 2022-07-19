@@ -1,7 +1,6 @@
 const fs = require('fs');
 const qrcode = require('qrcode-terminal');
-
-
+// * Inicia la sesión de whatsapp
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
 const client = new Client({
@@ -23,7 +22,7 @@ client.on('ready', () => {
   console.log('El cliente esta listo');
 });
 
-
+// * Crea el API Rest
 const express = require('express');
 const app = express();
 
@@ -32,33 +31,31 @@ const underscore = require('underscore');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Server on!');
+  res.send('<h1>Server on!</h1>');
 });
 
 app.post('/api/send', (req, res) => {
-  const numbers  = req.body;
+
+  //client.resetState()
+
+  const body  = req.body;
   const enviados = [];
-
-  client.pupPage.click("#pane-side");
-
-  async function init() {
-    console.log(1);
-    await sleep(5000);
-    console.log(2);
-  }
-
+<<<<<<< HEAD
   underscore.each(numbers, (number,i) => {
     
+=======
+  underscore.each(body, (envio,i) => {
+>>>>>>> parent of d78974a (Revert "Merge branch 'main' of https://github.com/FidelRoman/whatsapp-peya-aws")
     // Enviar Whatsapp
-    const chatId = number.number + "@c.us";
-    const message = number.message;
+    const chatId = envio.number + "@c.us";
+    const message = envio.message;
     client.sendMessage(chatId, message);
     enviados.push({
-      "Numero": number.number ,
+      "Numero": envio.number,
       "Respuesta": "Enviado"
     })
   });
-  
+
   res.send(enviados)
 });
 
