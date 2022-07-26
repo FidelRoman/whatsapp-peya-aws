@@ -44,11 +44,21 @@ app.post('/api/send', (req, res) => {
     // Enviar Whatsapp
     const chatId = envio.number + "@c.us";
     const message = envio.message;
+
+    try {
     client.sendMessage(chatId, message);
     enviados.push({
       "Numero": envio.number,
-      "Respuesta": "Enviado"
+      "Respuesta": "Enviado Correctamente"
     })
+    } catch (error) {
+    enviados.push({
+      "Numero": envio.number,
+      "Respuesta": "Error al enviar"
+    })
+  }
+
+
   });
 
   res.send(enviados)
