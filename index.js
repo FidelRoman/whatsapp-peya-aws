@@ -45,20 +45,26 @@ app.post('/api/send', (req, res) => {
     const chatId = envio.number + "@c.us";
     const message = envio.message;
 
+    if (envio.number.length == 11) {    
     try {
     client.sendMessage(chatId, message);
     enviados.push({
       "Numero": envio.number,
       "Respuesta": "Enviado Correctamente"
     })
-    } catch (error) {
-    enviados.push({
-      "Numero": envio.number,
-      "Respuesta": "Error al enviar"
-    })
-  }
-
-
+    } catch (e) {
+      console.log(e);
+      enviados.push({
+        "Numero": envio.number,
+        "Respuesta": "Error al enviar"
+      })
+    }
+    } else {
+      enviados.push({
+        "Numero": envio.number,
+        "Respuesta": "Numero Invalido"
+      })
+    }
   });
 
   res.send(enviados)
