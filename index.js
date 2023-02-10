@@ -25,6 +25,7 @@ client.on('ready', () => {
 // * Crea el API Rest
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
 const underscore = require('underscore');
 
@@ -71,4 +72,4 @@ app.post('/api/send', (req, res) => {
   res.send(enviados)
 });
 
-app.listen(3000)
+app.listen(port)
